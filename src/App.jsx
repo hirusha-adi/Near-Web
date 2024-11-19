@@ -6,7 +6,9 @@ function App() {
   return (
     <>
       <Header />
-      <AllRoutes />
+      <main className="bg-gray-50">
+        <AllRoutes />
+      </main>
       <Footer />
     </>
   );
