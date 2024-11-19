@@ -63,10 +63,6 @@ const Header = () => {
                   <ArrowTopRightOnSquareIcon className="w-4" />
                 </a>
               </li>
-              <li className="menu-title">
-                <span className="divider m-0 my-0 pointer-events-none"></span>
-              </li>
-              <li className="text-right text-gray-600">Near v0.8</li>
             </ul>
           </div>
         </div>
