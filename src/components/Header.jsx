@@ -1,7 +1,9 @@
-import ImagePandaFace from "../assets/face.png";
+import { motion } from "framer-motion";
 import { ChartBarIcon } from "@heroicons/react/24/outline";
 import { QuestionMarkCircleIcon } from "@heroicons/react/24/outline";
 import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
+
+import ImagePandaFace from "../assets/face.png";
 
 const Header = () => {
   return (
@@ -70,14 +72,19 @@ const Header = () => {
           </div>
         </div>
         <div className="navbar-center">
-          <a className="btn btn-ghost text-xl">
+          <motion.a
+            initial={{ y: -25, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.75, delay: 0.25 }}
+            className="btn btn-ghost text-xl"
+          >
             <div className="avatar">
               <div className="w-10">
                 <img alt="Tailwind CSS Navbar component" src={ImagePandaFace} />
               </div>
             </div>
             Near
-          </a>
+          </motion.a>
         </div>
         <div className="navbar-end">
           <button className="btn btn-ghost btn-circle">
