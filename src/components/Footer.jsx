@@ -7,7 +7,7 @@ import { Discord } from "react-bootstrap-icons";
 const Footer = () => {
   return (
     <>
-      <footer className="footer footer-center bg-base-200 p-10">
+      <footer className="footer footer-center bg-gray-100 p-10">
         <aside className="flex flex-col items-center md:flex-row md:justify-center md:gap-8">
           <img src={ImagePandaSitting} alt="" className="w-28" />
           <div className="flex flex-col justify-center items-center text-center md:items-start md:text-left">
