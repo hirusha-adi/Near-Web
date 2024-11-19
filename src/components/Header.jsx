@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import { ChartBarIcon } from "@heroicons/react/24/outline";
 import { QuestionMarkCircleIcon } from "@heroicons/react/24/outline";
 import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
@@ -36,16 +37,16 @@ const Header = () => {
               className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
             >
               <li>
-                <a>Home</a>
+                <Link to={"/"}>Home</Link>
               </li>
               <li>
-                <a>Leaderboards</a>
+                <Link to={"/leaderboards"}>Leaderboards</Link>
               </li>
               <li>
-                <a>Help & Support</a>
+                <Link to={"/help"}>Help & Support</Link>
               </li>
               <li>
-                <a>Admin Login</a>
+                <Link to={"/admin/login"}>Admin Login</Link>
               </li>
               <li className="menu-title">
                 <span className="divider m-0 my-0 pointer-events-none"></span>
