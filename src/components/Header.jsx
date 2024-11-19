@@ -34,6 +34,9 @@ const Header = () => {
               className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
             >
               <li>
+                <a>Home</a>
+              </li>
+              <li>
                 <a>Leaderboards</a>
               </li>
               <li>
@@ -67,7 +70,14 @@ const Header = () => {
           </div>
         </div>
         <div className="navbar-center">
-          <a className="btn btn-ghost text-xl">daisyUI</a>
+          <a className="btn btn-ghost text-xl">
+            <div className="avatar">
+              <div className="w-10">
+                <img alt="Tailwind CSS Navbar component" src={ImagePandaFace} />
+              </div>
+            </div>
+            Near
+          </a>
         </div>
         <div className="navbar-end">
           <button className="btn btn-ghost btn-circle">
