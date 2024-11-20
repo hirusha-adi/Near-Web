@@ -11,9 +11,9 @@ const PageNotFound = () => {
 
   return (
     <>
-      <div className="hero lg:pt-24 pt-12 lg:pb-60 pb-32">
+      <div className="hero lg:pt-24 min-h-screen">
         <div className="hero-content text-center">
-          <div className="max-w-md">
+          <div className="max-w-md mb-48">
             <img src={ImagePanda404} alt="404 Error" className="min-w-72" />
             <p className="py-6 pb-12">
               The page you requested is nowhere to be found...
