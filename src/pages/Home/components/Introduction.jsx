@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { ChevronRightIcon } from "@heroicons/react/24/outline";
+import Typewriter from "typewriter-effect";
 
 import ImagePandaSitting from "../../../assets/sitting.png";
 
@@ -39,7 +40,20 @@ const Introduction = () => {
                 </p>
               </a>
               <h1 className="text-4xl font-extrabold sm:text-5xl">
-                I am Near, The discord of TeamSDS.
+                I am Near,
+                <Typewriter
+                  options={{
+                    strings: [
+                      "I play music!",
+                      "I help scambait!",
+                      "I help with OSINT!",
+                      "I generate fake info!",
+                      "I provide useful tools!",
+                    ],
+                    autoStart: true,
+                    loop: true,
+                  }}
+                />
               </h1>
               <p>
                 I am a Discord bot designed to help you with all your needs in
