@@ -35,7 +35,7 @@ const Introduction = () => {
                   News
                 </span>
                 <p className="flex items-center">
-                  Version 8.0 has been released!
+                  Version 0.8 has been released!
                   <ChevronRightIcon className="w-4" />
                 </p>
               </a>
