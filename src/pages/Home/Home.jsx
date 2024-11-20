@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { Introduction } from "./components/Introduction";
 import { BackToTop } from "../../components";
+import { Music } from "./components/Music";
 
 const Home = () => {
   useEffect(() => {
@@ -10,10 +11,7 @@ const Home = () => {
   return (
     <>
       <Introduction />
-      <h1>
-        either use Typewrite on home page or get rid of it in package.json
-        https://www.npmjs.com/package/typewriter-effect
-      </h1>
+      <Music />
       <BackToTop />
     </>
   );
