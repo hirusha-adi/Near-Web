@@ -26,7 +26,7 @@ const Introduction = () => {
               />
             </div>
             {/* Text Section */}
-            <div className="flex-none space-y-5 max-w-xl mt-12 md:mt-2">
+            <div className="flex-none space-y-5 max-w-xl mt-12 md:mt-2 text-center md:text-left">
               <a
                 href="https://github.com/hirusha-adi/Near/releases/latest"
                 className="gap-x-6 items-center rounded-2xl p-1 pr-6 border text-sm font-medium duration-150 hover:bg-white hidden md:inline-flex glass"
@@ -61,7 +61,7 @@ const Introduction = () => {
                 as playing music, finding resources, and even OSINT! I&apos;m
                 always happy to help, so feel free to ask me anything!
               </p>
-              <div className="flex items-center gap-x-3 sm:text-sm">
+              <div className="flex items-center justify-center md:justify-start gap-x-3 sm:text-sm">
                 <Link to={"/leaderboards"} className="btn">
                   Leaderboard
                   <ChevronRightIcon className="w-5" />
