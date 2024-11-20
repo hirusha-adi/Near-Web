@@ -1,5 +1,6 @@
+import { Link } from "react-router-dom";
 import { ChevronRightIcon } from "@heroicons/react/24/outline";
-import ImagePandaFace from "../../../assets/face.png";
+
 import ImagePandaSitting from "../../../assets/sitting.png";
 
 const Introduction = () => {
@@ -9,24 +10,24 @@ const Introduction = () => {
         className="absolute inset-0 blur-xl h-full"
         style={{
           background:
-            "linear-gradient(143.6deg, rgba(255, 0, 0, 0) 20.79%, rgba(255, 69, 58, 0.26) 40.92%, rgba(255, 0, 0, 0) 70.35%)",
+            "linear-gradient(145deg, rgba(255, 0, 0, 0) 20.79%, rgba(255, 69, 58, 0.26) 40.92%, rgba(255, 0, 0, 0) 70.35%)",
         }}
       ></div>
       <div className="relative">
         <section>
-          <div className="max-w-screen-xl mx-auto px-4 pb-28 pt-12 md:pt-24 gap-12 text-gray-600 overflow-hidden md:px-16 md:flex md:flex-row-reverse">
+          <div className="max-w-screen-xl mx-auto px-4 pb-28 pt-12 md:pt-24 gap-12 overflow-hidden md:px-16 md:flex md:flex-row-reverse">
             {/* Image Section */}
             <div className="flex justify-center md:block md:flex-1 order-first md:order-none">
               <img
                 src={ImagePandaSitting}
-                className="w-48 sm:w-64 md:w-96 mx-auto block"
+                className="w-64 sm:w-64 md:w-80 mx-auto block"
                 alt="Panda Face"
               />
             </div>
             {/* Text Section */}
-            <div className="flex-none space-y-5 max-w-xl">
+            <div className="flex-none space-y-5 max-w-xl mt-12 md:mt-2">
               <a
-                href="javascript:void(0)"
+                href="https://github.com/hirusha-adi/Near/releases/latest"
                 className="gap-x-6 items-center rounded-2xl p-1 pr-6 border text-sm font-medium duration-150 hover:bg-white hidden md:inline-flex glass"
               >
                 <span className="inline-block rounded-2xl px-3 py-1 bg-red-600 text-white">
@@ -37,7 +38,7 @@ const Introduction = () => {
                   <ChevronRightIcon className="w-4" />
                 </p>
               </a>
-              <h1 className="text-4xl text-gray-900 font-extrabold sm:text-5xl">
+              <h1 className="text-4xl font-extrabold sm:text-5xl">
                 I am Near, The discord of TeamSDS.
               </h1>
               <p>
@@ -45,14 +46,14 @@ const Introduction = () => {
                 doloremque laudantium, totam rem aperiam, eaque ipsa quae.
               </p>
               <div className="flex items-center gap-x-3 sm:text-sm">
-                <a href="javascript:void(0)" className="btn">
-                  Get started
+                <Link to={"/leaderboards"} className="btn">
+                  Leaderboard
                   <ChevronRightIcon className="w-5" />
-                </a>
-                <a href="javascript:void(0)" className="btn btn-ghost">
-                  Contact sales
+                </Link>
+                <Link to={"/help"} className="btn btn-ghost">
+                  Help & Support
                   <ChevronRightIcon className="w-5" />
-                </a>
+                </Link>
               </div>
             </div>
           </div>
