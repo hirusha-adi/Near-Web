@@ -30,9 +30,9 @@ const Music = () => {
                 I play music!
               </h1>
               <p>
-                DI play high-quality music in your Discord server, powered by
-                Lavalink for reliability, stability, and excellent audio. You
-                can also view music leaderboards{" "}
+                I play high-quality music, powered by Lavalink for reliability,
+                stability, and excellent audio. You can also view music
+                leaderboards{" "}
                 <Link to={"/leaderboards"} className="text-red-600">
                   here
                 </Link>
