@@ -76,19 +76,24 @@ const Header = () => {
           </div>
         </div>
         <div className="navbar-center">
-          <motion.a
-            initial={{ y: -25, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.75, delay: 0.25 }}
-            className="btn btn-ghost text-xl"
-          >
-            <div className="avatar">
-              <div className="w-10">
-                <img alt="Tailwind CSS Navbar component" src={ImagePandaFace} />
+          <Link to={"/"}>
+            <motion.a
+              initial={{ y: -25, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.75, delay: 0.25 }}
+              className="btn btn-ghost text-xl"
+            >
+              <div className="avatar">
+                <div className="w-10">
+                  <img
+                    alt="Tailwind CSS Navbar component"
+                    src={ImagePandaFace}
+                  />
+                </div>
               </div>
-            </div>
-            Near
-          </motion.a>
+              Near
+            </motion.a>
+          </Link>
         </div>
         <div className="navbar-end">
           <button className="btn btn-ghost btn-circle">
