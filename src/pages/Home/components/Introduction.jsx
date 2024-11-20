@@ -20,7 +20,7 @@ const Introduction = () => {
             <div className="flex justify-center md:block md:flex-1 order-first md:order-none">
               <img
                 src={ImagePandaSitting}
-                className="w-64 sm:w-64 md:w-80 mx-auto block"
+                className="w-64 sm:w-64 md:w-96 mx-auto block"
                 alt="Panda Face"
               />
             </div>
@@ -42,8 +42,10 @@ const Introduction = () => {
                 I am Near, The discord of TeamSDS.
               </h1>
               <p>
-                Sed ut perspiciatis unde omnis iste natus voluptatem accusantium
-                doloremque laudantium, totam rem aperiam, eaque ipsa quae.
+                I am a Discord bot designed to help you with all your needs in
+                the TeamSDS server. I can help you with a variety of tasks, such
+                as playing music, finding resources, and even OSINT! I&apos;m
+                always happy to help, so feel free to ask me anything!
               </p>
               <div className="flex items-center gap-x-3 sm:text-sm">
                 <Link to={"/leaderboards"} className="btn">
