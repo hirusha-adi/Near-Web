@@ -14,5 +14,8 @@ export async function login(username, password) {
 
 export async function logout() {
   pb.authStore.clear();
-  window.location.reload();
+
+  // WARNING: this will break if there is a base url
+  window.location.href = "/admin/login";
+  // window.location.reload();
 }
