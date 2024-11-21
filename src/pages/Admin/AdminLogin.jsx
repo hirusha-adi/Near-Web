@@ -1,21 +1,35 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { UserIcon } from "@heroicons/react/24/outline";
 import { KeyIcon } from "@heroicons/react/24/outline";
+import { login, isUserLoggedIn } from "../../lib/backend";
 
 const AdminLogin = () => {
   useEffect(() => {
     document.title = `Admin Login`;
   });
 
+  const [user, setUser] = useState("");
+  const [password, setPassword] = useState("");
+
+  async function handleLogin(e) {
+    e.preventDefault();
+    console.log(user, password);
+    login(user, password);
+  }
+
   return (
     <>
       <div className="min-h-screen pb-12 md:pb-56 flex flex-col items-center justify-center px-4">
         <div className="grid md:grid-cols-2 items-center gap-4 max-w-6xl w-full">
           <div className="border border-gray-300 rounded-lg p-6 max-w-md shadow-[0_2px_22px_-4px_rgba(93,96,127,0.2)] max-md:mx-auto">
-            <form className="space-y-4">
+            <form className="space-y-4" onSubmit={handleLogin}>
               {/* Topic */}
               <div className="mb-8">
-                <h3 className="text-3xl font-extrabold">Sign in</h3>
+                <h3 className="text-3xl font-extrabold">
+                  {isUserLoggedIn
+                    ? `Logged in as ${isUserLoggedIn.toString()}`
+                    : "Sign in"}
+                </h3>
                 <p className="text-sm mt-4 leading-relaxed">
                   Sign in to manage Near and all related settings.
                 </p>
@@ -23,7 +37,14 @@ const AdminLogin = () => {
               {/* Fields */}
               <label className="input input-bordered flex items-center gap-2">
                 <UserIcon className="w-5" />
-                <input type="text" className="grow" placeholder="Username" />
+                <input
+                  type="text"
+                  className="grow"
+                  placeholder="Username"
+                  onChange={(e) => {
+                    setUser(e.target.value);
+                  }}
+                />
               </label>
               <label className="input input-bordered flex items-center gap-2">
                 <KeyIcon className="w-5" />
@@ -31,13 +52,16 @@ const AdminLogin = () => {
                   type="password"
                   className="grow"
                   placeholder="Password"
+                  onChange={(e) => {
+                    setPassword(e.target.value);
+                  }}
                 />
               </label>
               {/* Login Button */}
               <div className="!mt-8">
                 <button
-                  type="button"
                   className="btn btn-error w-full text-white"
+                  type="submit"
                 >
                   Login
                 </button>
@@ -45,10 +69,7 @@ const AdminLogin = () => {
               {/* Contact */}
               <p className="text-sm !mt-8 text-center text-gray-800">
                 Don&apos;t have an account?{" "}
-                <a
-                  href="javascript:void(0);"
-                  className="text-red-500 font-semibold hover:underline ml-1 whitespace-nowrap"
-                >
+                <a className="text-red-500 font-semibold hover:underline ml-1 whitespace-nowrap">
                   Contact Us
                 </a>
               </p>

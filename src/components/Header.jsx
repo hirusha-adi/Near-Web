@@ -5,6 +5,7 @@ import { QuestionMarkCircleIcon } from "@heroicons/react/24/outline";
 import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
 
 import ImagePandaFace from "../assets/face.png";
+import { isUserLoggedIn, logout } from "../lib/backend";
 
 const Header = () => {
   return (
@@ -46,8 +47,17 @@ const Header = () => {
                 <Link to={"/help"}>Help & Support</Link>
               </li>
               <li>
-                <Link to={"/admin/login"}>Admin Login</Link>
+                <Link to={"/admin/login"}>
+                  Admin {isUserLoggedIn ? "Dashboard" : "Login"}
+                </Link>
               </li>
+              {isUserLoggedIn && (
+                <li>
+                  <div onClick={logout} className="font-bold italic">
+                    Logout
+                  </div>
+                </li>
+              )}
               <li className="menu-title">
                 <span className="divider m-0 my-0 pointer-events-none"></span>
               </li>
