@@ -32,7 +32,7 @@ const Osint = () => {
               <p>
                 I assist with OSINT to fight against scammers by providing
                 powerful tools and insights for uncovering fraudulent
-                activities. Whether it’s tracking down suspicious patterns,
+                activities. Whether it&apos;s tracking down suspicious patterns,
                 identifying malicious actors, or analyzing data, I aim to help
                 protect communities and promote safety online. Together, we can
                 work to expose scams and create a more secure digital
