@@ -10,7 +10,7 @@ const Music = () => {
         className="absolute inset-0 blur-xl h-full"
         style={{
           background:
-            "linear-gradient(45deg, rgba(255, 0, 0, 0) 20.79%, rgba(255, 69, 58, 0.26) 40.92%, rgba(255, 0, 0, 0) 70.35%)",
+            "linear-gradient(40deg, rgba(255, 0, 0, 0) 20.79%, rgba(255, 69, 58, 0.26) 40.92%, rgba(255, 0, 0, 0) 70.35%)",
         }}
       ></div>
       <div className="relative">
