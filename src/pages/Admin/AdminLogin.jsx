@@ -7,120 +7,128 @@ const AdminLogin = () => {
 
   return (
     <>
-      <div className="flex min-h-screen w-screen w-full items-center justify-center text-gray-600 bg-gray-50">
-        <div className="relative">
-          {/* ---------------------- */}
-          {/* bg grid - top */}
-          <div className="hidden sm:block h-56 w-56 text-red-300 absolute a-z-10 -left-20 -top-20">
-            <svg
-              id="patternId"
-              width="100%"
-              height="100%"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <defs>
-                <pattern
-                  id="a"
-                  patternUnits="userSpaceOnUse"
-                  width="40"
-                  height="40"
-                  patternTransform="scale(0.6) rotate(0)"
-                >
-                  <rect x="0" y="0" width="100%" height="100%" fill="none" />
-                  <path
-                    d="M11 6a5 5 0 01-5 5 5 5 0 01-5-5 5 5 0 015-5 5 5 0 015 5"
-                    stroke="none"
-                    fill="currentColor"
-                  />
-                </pattern>
-              </defs>
-              <rect
-                width="800%"
-                height="800%"
-                transform="translate(0,0)"
-                fill="url(#a)"
-              />
-            </svg>
-          </div>
-          {/* bg grid - bottom */}
-          <div className="hidden sm:block h-28 w-28 text-red-300 absolute a-z-10 -right-20 -bottom-20">
-            <svg
-              id="patternId"
-              width="100%"
-              height="100%"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <defs>
-                <pattern
-                  id="b"
-                  patternUnits="userSpaceOnUse"
-                  width="40"
-                  height="40"
-                  patternTransform="scale(0.5) rotate(0)"
-                >
-                  <rect x="0" y="0" width="100%" height="100%" fill="none" />
-                  <path
-                    d="M11 6a5 5 0 01-5 5 5 5 0 01-5-5 5 5 0 015-5 5 5 0 015 5"
-                    stroke="none"
-                    fill="currentColor"
-                  />
-                </pattern>
-              </defs>
-              <rect
-                width="800%"
-                height="800%"
-                transform="translate(0,0)"
-                fill="url(#b)"
-              />
-            </svg>
-          </div>
-          {/* ---------------------- */}
-
-          <div className="relative flex flex-col sm:w-[30rem] rounded-lg border-gray-400 bg-white shadow-lg px-4">
-            <div className="flex-auto p-6">
-              <div className="mb-10 flex flex-shrink-0 flex-grow-0 items-center justify-center overflow-hidden">
-                <a className="flex cursor-pointer items-center gap-2 text-red-500 no-underline hover:text-red-500">
-                  <span className="flex-shrink-0 text-3xl font-black tracking-tight opacity-100">
-                    Admin Login
-                  </span>
-                </a>
+      <div className="min-h-screen flex fle-col items-center justify-center py-6 px-4">
+        <div className="grid md:grid-cols-2 items-center gap-4 max-w-6xl w-full">
+          <div className="border border-gray-300 rounded-lg p-6 max-w-md shadow-[0_2px_22px_-4px_rgba(93,96,127,0.2)] max-md:mx-auto">
+            <form className="space-y-4">
+              <div className="mb-8">
+                <h3 className="text-gray-800 text-3xl font-extrabold">
+                  Sign in
+                </h3>
+                <p className="text-gray-500 text-sm mt-4 leading-relaxed">
+                  Sign in to your account and explore a world of possibilities.
+                  Your journey begins here.
+                </p>
               </div>
-              <form id="" className="mb-4">
-                <div className="mb-4">
-                  <label className="mb-2 inline-block text-xs font-medium uppercase text-gray-700">
-                    Email or Username
-                  </label>
+
+              <div>
+                <label className="text-gray-800 text-sm mb-2 block">
+                  User name
+                </label>
+                <div className="relative flex items-center">
                   <input
+                    name="username"
                     type="text"
-                    className="block w-full cursor-text appearance-none rounded-md border border-gray-400 bg--100 py-2 px-3 text-sm outline-none focus:border-red-500 focus:bg-white focus:text-gray-600 focus:shadow"
-                    id="email"
-                    name="email-username"
-                    placeholder="Enter your email or username"
+                    required
+                    className="w-full text-sm text-gray-800 border border-gray-300 px-4 py-3 rounded-lg outline-red-600"
+                    placeholder="Enter user name"
                   />
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="#bbb"
+                    stroke="#bbb"
+                    className="w-[18px] h-[18px] absolute right-4"
+                    viewBox="0 0 24 24"
+                  >
+                    <circle
+                      cx="10"
+                      cy="7"
+                      r="6"
+                      data-original="#000000"
+                    ></circle>
+                    <path
+                      d="M14 15H6a5 5 0 0 0-5 5 3 3 0 0 0 3 3h12a3 3 0 0 0 3-3 5 5 0 0 0-5-5zm8-4h-2.59l.3-.29a1 1 0 0 0-1.42-1.42l-2 2a1 1 0 0 0 0 1.42l2 2a1 1 0 0 0 1.42 0 1 1 0 0 0 0-1.42l-.3-.29H22a1 1 0 0 0 0-2z"
+                      data-original="#000000"
+                    ></path>
+                  </svg>
                 </div>
-                <div className="mb-4">
-                  <label className="mb-2 inline-block text-xs font-medium uppercase text-gray-700">
-                    Password
+              </div>
+              <div>
+                <label className="text-gray-800 text-sm mb-2 block">
+                  Password
+                </label>
+                <div className="relative flex items-center">
+                  <input
+                    name="password"
+                    type="password"
+                    required
+                    className="w-full text-sm text-gray-800 border border-gray-300 px-4 py-3 rounded-lg outline-red-600"
+                    placeholder="Enter password"
+                  />
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="#bbb"
+                    stroke="#bbb"
+                    className="w-[18px] h-[18px] absolute right-4 cursor-pointer"
+                    viewBox="0 0 128 128"
+                  >
+                    <path
+                      d="M64 104C22.127 104 1.367 67.496.504 65.943a4 4 0 0 1 0-3.887C1.367 60.504 22.127 24 64 24s62.633 36.504 63.496 38.057a4 4 0 0 1 0 3.887C126.633 67.496 105.873 104 64 104zM8.707 63.994C13.465 71.205 32.146 96 64 96c31.955 0 50.553-24.775 55.293-31.994C114.535 56.795 95.854 32 64 32 32.045 32 13.447 56.775 8.707 63.994zM64 88c-13.234 0-24-10.766-24-24s10.766-24 24-24 24 10.766 24 24-10.766 24-24 24zm0-40c-8.822 0-16 7.178-16 16s7.178 16 16 16 16-7.178 16-16-7.178-16-16-16z"
+                      data-original="#000000"
+                    ></path>
+                  </svg>
+                </div>
+              </div>
+
+              <div className="flex flex-wrap items-center justify-between gap-4">
+                <div className="flex items-center">
+                  <input
+                    id="remember-me"
+                    name="remember-me"
+                    type="checkbox"
+                    className="h-4 w-4 shrink-0 text-red-600 focus:ring-red-500 border-gray-300 rounded"
+                  />
+                  <label className="ml-3 block text-sm text-gray-800">
+                    Remember me
                   </label>
-                  <div className="relative flex w-full flex-wrap items-stretch">
-                    <input
-                      type="password"
-                      id="password"
-                      className="relative block flex-auto cursor-text appearance-none rounded-md border border-gray-400 bg--100 py-2 px-3 text-sm outline-none focus:border-red-500 focus:bg-white focus:text-gray-600 focus:shadow"
-                      name="password"
-                      placeholder="············"
-                    />
-                  </div>
                 </div>
-                <div className="mb-4">
-                  <a className="grid w-full cursor-pointer select-none rounded-md border border-red-500 bg-red-500 py-2 px-5 text-center align-middle text-sm text-white shadow hover:border-red-600 hover:bg-red-600 hover:text-white focus:border-red-600 focus:bg-red-600 focus:text-white focus:shadow-none">
-                    Sign in
+
+                <div className="text-sm">
+                  <a
+                    href="jajvascript:void(0);"
+                    className="text-red-600 hover:underline font-semibold"
+                  >
+                    Forgot your password?
                   </a>
                 </div>
-              </form>
+              </div>
 
-              <p className="mb-4 text-center">Don&apos;t have an account?</p>
-            </div>
+              <div className="!mt-8">
+                <button
+                  type="button"
+                  className="w-full shadow-xl py-3 px-4 text-sm tracking-wide rounded-lg text-white bg-red-600 hover:bg-red-700 focus:outline-none"
+                >
+                  Log in
+                </button>
+              </div>
+
+              <p className="text-sm !mt-8 text-center text-gray-800">
+                Don&apos;t have an account{" "}
+                <a
+                  href="javascript:void(0);"
+                  className="text-red-600 font-semibold hover:underline ml-1 whitespace-nowrap"
+                >
+                  Register here
+                </a>
+              </p>
+            </form>
+          </div>
+          <div className="lg:h-[400px] md:h-[300px] max-md:mt-8">
+            <img
+              src="https://readymadeui.com/login-image.webp"
+              className="w-full h-full max-md:w-4/5 mx-auto block object-cover"
+              alt="Dining Experience"
+            />
           </div>
         </div>
       </div>
