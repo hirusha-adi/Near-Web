@@ -1,5 +1,5 @@
 // layout
-export { Header } from "./Header";
+export { Header } from "./Header/Header";
 export { Footer } from "./Footer";
 
 // utils

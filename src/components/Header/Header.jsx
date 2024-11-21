@@ -1,11 +1,12 @@
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { ChartBarIcon } from "@heroicons/react/24/outline";
 import { QuestionMarkCircleIcon } from "@heroicons/react/24/outline";
 import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
 
-import ImagePandaFace from "../assets/face.png";
-import { isUserLoggedIn, logout } from "../lib/backend";
+import "./Header.css";
+import ImagePandaFace from "../../assets/face.png";
+import { isUserLoggedIn, logout } from "../../lib/backend";
 
 const Header = () => {
   return (
@@ -38,18 +39,18 @@ const Header = () => {
               className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
             >
               <li>
-                <Link to={"/"}>Home</Link>
+                <NavLink to={"/"}>Home</NavLink>
               </li>
               <li>
-                <Link to={"/leaderboards"}>Leaderboards</Link>
+                <NavLink to={"/leaderboards"}>Leaderboards</NavLink>
               </li>
               <li>
-                <Link to={"/help"}>Help & Support</Link>
+                <NavLink to={"/help"}>Help & Support</NavLink>
               </li>
               <li>
-                <Link to={"/admin/login"}>
+                <NavLink to={"/admin/login"}>
                   Admin {isUserLoggedIn ? "Dashboard" : "Login"}
-                </Link>
+                </NavLink>
               </li>
               {isUserLoggedIn && (
                 <li>
@@ -106,14 +107,14 @@ const Header = () => {
           </Link>
         </div>
         <div className="navbar-end">
-          <button className="btn btn-ghost btn-circle">
+          <NavLink to={"/leaderboards"} className="btn btn-ghost btn-circle">
             <ChartBarIcon className="w-6" />
-          </button>
-          <button className="btn btn-ghost btn-circle">
+          </NavLink>
+          <NavLink to={"/help"} className="btn btn-ghost btn-circle">
             <div className="indicator">
               <QuestionMarkCircleIcon className="w-6" />
             </div>
-          </button>
+          </NavLink>
         </div>
       </div>
     </>
