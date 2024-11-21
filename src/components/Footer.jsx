@@ -18,16 +18,16 @@ const Footer = () => {
                 <span className="text-md">a Discord bot for TeamSDS.</span>
               </p>
               <p className="mt-5">
-                <a className="btn mx-1">
+                <a className="btn mx-1 rounded-full">
                   <ChartBarIcon className="w-6 inline-block" />
                 </a>
-                <a className="btn mx-1">
+                <a className="btn mx-1 rounded-full">
                   <QuestionMarkCircleIcon className="w-6 inline-block" />
                 </a>
-                <a className="btn mx-1">
+                <a className="btn mx-1 rounded-full">
                   <CodeBracketIcon className="w-6 inline-block" />
                 </a>
-                <a className="btn mx-1">
+                <a className="btn mx-1 rounded-full">
                   <Discord className="text-xl w-6 inline-block" />
                 </a>
               </p>
