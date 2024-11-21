@@ -9,7 +9,7 @@ const AdminLogin = () => {
 
   return (
     <>
-      <div className="min-h-max flex flex-col items-center justify-center px-4 pt-20 md:pt-44 pb-36 md:pb-96">
+      <div className="min-h-screen pb-12 md:pb-56 flex flex-col items-center justify-center px-4">
         <div className="grid md:grid-cols-2 items-center gap-4 max-w-6xl w-full">
           <div className="border border-gray-300 rounded-lg p-6 max-w-md shadow-[0_2px_22px_-4px_rgba(93,96,127,0.2)] max-md:mx-auto">
             <form className="space-y-4">
@@ -49,7 +49,7 @@ const AdminLogin = () => {
                 Don&apos;t have an account?{" "}
                 <a
                   href="javascript:void(0);"
-                  className="text-red-600 font-semibold hover:underline ml-1 whitespace-nowrap"
+                  className="text-red-500 font-semibold hover:underline ml-1 whitespace-nowrap"
                 >
                   Contact Us
                 </a>
