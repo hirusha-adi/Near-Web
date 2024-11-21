@@ -40,7 +40,7 @@ const Osint = () => {
               </p>
               <div className="flex items-center justify-center md:justify-start gap-x-3 sm:text-sm">
                 <Link to={"/help"} className="btn btn-ghost">
-                  Help & Support
+                  Learn more
                   <ArrowLongRightIcon className="w-5" />
                 </Link>
               </div>
