@@ -3,7 +3,7 @@ import { EnvelopeIcon } from "@heroicons/react/24/outline";
 import { KeyIcon } from "@heroicons/react/24/outline";
 import { login } from "../../lib/backend";
 
-const AdminLogin = () => {
+const Login = () => {
   useEffect(() => {
     document.title = `Admin Login`;
   });
@@ -85,4 +85,4 @@ const AdminLogin = () => {
   );
 };
 
-export { AdminLogin };
+export { Login };
