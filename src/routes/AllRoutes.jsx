@@ -1,14 +1,25 @@
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, Navigate } from "react-router-dom";
+
+import { isUserLoggedIn } from "../lib/backend";
 import {
+  // -----
+  // Main
+  // -----
   Home,
   Leaderboards,
   Help,
+
+  // -----
+  // Admin
+  // -----
   AdminLogin,
   AdminHome,
+
+  // -----
+  // Other
+  // -----
   PageNotFound,
 } from "../pages";
-import { isUserLoggedIn } from "../lib/backend";
-import { Navigate } from "react-router-dom";
 
 const AllRoutes = () => {
   return (
