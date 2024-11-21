@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { EnvelopeIcon } from "@heroicons/react/24/outline";
 import { KeyIcon } from "@heroicons/react/24/outline";
-import { login, isUserLoggedIn } from "../../lib/backend";
+import { login } from "../../lib/backend";
 
 const AdminLogin = () => {
   useEffect(() => {
@@ -25,11 +25,7 @@ const AdminLogin = () => {
             <form className="space-y-4" onSubmit={handleLogin}>
               {/* Topic */}
               <div className="mb-8">
-                <h3 className="text-3xl font-extrabold">
-                  {isUserLoggedIn
-                    ? `Logged in as ${isUserLoggedIn.toString()}`
-                    : "Sign in"}
-                </h3>
+                <h3 className="text-3xl font-extrabold">Sign in</h3>
                 <p className="text-sm mt-4 leading-relaxed">
                   Sign in to manage Near and all related settings.
                 </p>
