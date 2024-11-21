@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { UserIcon } from "@heroicons/react/24/outline";
+import { EnvelopeIcon } from "@heroicons/react/24/outline";
 import { KeyIcon } from "@heroicons/react/24/outline";
 import { login, isUserLoggedIn } from "../../lib/backend";
 
@@ -36,11 +36,11 @@ const AdminLogin = () => {
               </div>
               {/* Fields */}
               <label className="input input-bordered flex items-center gap-2">
-                <UserIcon className="w-5" />
+                <EnvelopeIcon className="w-5" />
                 <input
-                  type="text"
+                  type="email"
                   className="grow"
-                  placeholder="Username"
+                  placeholder="Email"
                   onChange={(e) => {
                     setUser(e.target.value);
                   }}
