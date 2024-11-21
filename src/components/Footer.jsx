@@ -15,7 +15,7 @@ const Footer = () => {
               <p>
                 <span className="font-bold text-2xl">Near,</span>
                 <br />
-                <span className="text-md">a Discord bot for TeamSDS.</span>
+                <span className="text-md">The discord bot of Team SDS</span>
               </p>
               <p className="mt-5">
                 <a className="btn mx-1 rounded-full">
