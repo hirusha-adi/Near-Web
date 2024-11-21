@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
-import { ChevronRightIcon } from "@heroicons/react/24/outline";
-import Typewriter from "typewriter-effect";
+import { ArrowLongRightIcon } from "@heroicons/react/24/outline";
 
 import ImagePandaSitting from "../../../assets/sitting.png";
 
@@ -28,35 +27,21 @@ const Osint = () => {
             {/* Text Section */}
             <div className="flex-none space-y-5 max-w-xl mt-12 md:mt-2 text-center md:text-left">
               <h1 className="text-4xl font-extrabold sm:text-5xl">
-                I am Near,
-                <Typewriter
-                  options={{
-                    strings: [
-                      "I play music!",
-                      "I help scambait!",
-                      "I help with OSINT!",
-                      "I generate fake info!",
-                      "I provide useful tools!",
-                    ],
-                    autoStart: true,
-                    loop: true,
-                  }}
-                />
+                I help with OSINT!
               </h1>
               <p>
-                I am a Discord bot designed to help you with all your needs in
-                the TeamSDS server. I can help you with a variety of tasks, such
-                as playing music, finding resources, and even OSINT! I&apos;m
-                always happy to help, so feel free to ask me anything!
+                I assist with OSINT to fight against scammers by providing
+                powerful tools and insights for uncovering fraudulent
+                activities. Whether it’s tracking down suspicious patterns,
+                identifying malicious actors, or analyzing data, I aim to help
+                protect communities and promote safety online. Together, we can
+                work to expose scams and create a more secure digital
+                environment.
               </p>
               <div className="flex items-center justify-center md:justify-start gap-x-3 sm:text-sm">
-                <Link to={"/leaderboards"} className="btn">
-                  Leaderboard
-                  <ChevronRightIcon className="w-5" />
-                </Link>
                 <Link to={"/help"} className="btn btn-ghost">
                   Help & Support
-                  <ChevronRightIcon className="w-5" />
+                  <ArrowLongRightIcon className="w-5" />
                 </Link>
               </div>
             </div>
