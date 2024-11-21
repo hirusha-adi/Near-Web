@@ -6,6 +6,7 @@ import ImagePandaSitting from "../../../assets/sitting.png";
 
 const Introduction = () => {
   return (
+    // add `min-h-screen` if i'm gonna remove other sections of the home page
     <div className="relative">
       <div
         className="absolute inset-0 blur-xl h-full"
