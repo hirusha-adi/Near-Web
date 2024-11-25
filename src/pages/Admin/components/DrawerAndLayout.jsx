@@ -1,23 +1,45 @@
-const DrawerAndLayout = () => {
+import { useState } from "react";
+
+const DrawerAndLayout = ({ children }) => {
+
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
   return (
-    <>
-      <div className="drawer">
-        <input id="my-drawer" type="checkbox" className="drawer-toggle" />
-        <div className="drawer-content">
-          {/* Page content here */}
-          <label htmlFor="my-drawer" className="btn btn-primary drawer-button">Open drawer</label>
+    <div className="min-h-screen flex flex-col">
+      <div className="flex flex-1">
+        {/* Sidebar */}
+        <div
+          className={`fixed z-20 bg-base-200 h-full w-64 transition-transform transform ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"
+            } md:translate-x-0 md:static`}
+        >
+          <div className="p-4">
+            {/* Sidebar Content */}
+            <h2 className="text-lg font-bold mb-4">Sidebar</h2>
+            <ul className="menu menu-vertical">
+              <li><a href="#">Link 1</a></li>
+              <li><a href="#">Link 2</a></li>
+              <li><a href="#">Link 3</a></li>
+            </ul>
+          </div>
         </div>
-        <div className="drawer-side">
-          <label htmlFor="my-drawer" aria-label="close sidebar" className="drawer-overlay"></label>
-          <ul className="menu bg-base-200 text-base-content min-h-full w-80 p-4">
-            {/* Sidebar content here */}
-            <li><a>Sidebar Item 1</a></li>
-            <li><a>Sidebar Item 2</a></li>
-          </ul>
+
+        {/* Main Content */}
+        <div className="flex flex-1 flex-col md:ml-64">
+          {/* Mobile Sidebar Toggle */}
+          <div className="md:hidden p-4 bg-base-100">
+            <button
+              onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+              className="btn btn-primary"
+            >
+              {isSidebarOpen ? "Hide Sidebar" : "Show Sidebar"}
+            </button>
+          </div>
+
+          {/* Page Content */}
+          <main className="p-4">{children}</main>
         </div>
       </div>
-
-    </>
+    </div>
   );
 };
 
