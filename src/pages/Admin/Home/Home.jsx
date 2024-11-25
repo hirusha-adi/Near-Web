@@ -1,11 +1,12 @@
 import { isUserLoggedIn, user } from "../../../lib/backend";
+import { DrawerAndLayout } from "../components/DrawerAndLayout";
 
 const Home = () => {
-  console.log(isUserLoggedIn);
-  console.log(user.model.name);
-  console.log(user.token);
-
-  return <>Page</>;
+  return (
+    <>
+      <DrawerAndLayout />
+    </>
+  );
 };
 
 export { Home };
