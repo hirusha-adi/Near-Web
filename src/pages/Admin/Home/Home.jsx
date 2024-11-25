@@ -4,7 +4,9 @@ import { DrawerAndLayout } from "../components/DrawerAndLayout";
 const Home = () => {
   return (
     <>
-      <DrawerAndLayout />
+      <DrawerAndLayout>
+        Page Content Here!
+      </DrawerAndLayout>
     </>
   );
 };
