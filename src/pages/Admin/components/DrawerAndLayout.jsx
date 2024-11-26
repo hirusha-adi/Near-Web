@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { BookOpenIcon, CogIcon, ChatBubbleOvalLeftIcon, MusicalNoteIcon, ChartPieIcon } from "@heroicons/react/24/outline";
-import { Robot, ClockHistory } from "react-bootstrap-icons";
-import { CardsLayout } from "../Home/components/Cards/CardLayout";
+import { Robot, ClockHistory, LayoutSidebar } from "react-bootstrap-icons";
 
 const DrawerAndLayout = ({ children }) => {
 
@@ -24,25 +23,24 @@ const DrawerAndLayout = ({ children }) => {
 
   return (
     <div className="min-h-screen flex">
+
       {/* Sidebar */}
       <div
         className={`fixed z-20 bg-base-200 h-screen w-64 transition-transform transform ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"
           } md:translate-x-0 md:static`}
       >
         <div className="flex flex-col h-full">
-
           {/* Mobile Collapse Button */}
-          <div className="md:hidden p-4">
-            <button
-              onClick={() => setIsSidebarOpen(false)}
-              className="btn btn-outline btn-error w-full"
+          <div className="md:hidden p-3 border-b border-gray-300">
+            <div
+              className="text-gray-800 btn rounded-xl w-full btn-ghost"
+              onClick={() => setIsSidebarOpen(!isSidebarOpen)}
             >
-              Hide
-            </button>
+              <LayoutSidebar className="text-xl" /> Hide Sidebar
+            </div>
           </div>
-
           {/* Sidebar Content */}
-          <div className="p-4 flex-1 overflow-y-auto">
+          <div className="px-4 pt-2 pb-4 flex-1 overflow-y-auto">
             <h2 className="text-xl font-bold mb-4">Sections</h2>
             <ul className="menu menu-md bg-base-200 rounded-box w-56">
               <li><a><ChartPieIcon className="w-5 pt-1" />Statistics</a></li>
@@ -81,30 +79,34 @@ const DrawerAndLayout = ({ children }) => {
 
       {/* Body Content */}
       <div className="flex flex-1 flex-col ">
-        <div className="flex flex-row justify-between items-center flex-nowrap gap-4 bg-beige-100 p-4 md:p-6">
+
+        {/* Top Bar */}
+        <div className="flex flex-row justify-between items-center flex-nowrap gap-4 bg-white px-4 md:px-6 py-2">
           {/* left column */}
-          <div className="">
-            <div className="text-gray-800 btn " onClick={() => setIsSidebarOpen(!isSidebarOpen)}>Show Sidebar</div>
+          <div className="md:hidden">
+            <div
+              className="text-gray-800 btn rounded-xl btn-ghost"
+              onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+            >
+              <LayoutSidebar className="text-xl" /> Show Sidebar
+            </div>
           </div>
           {/* right column */}
           <div className="flex items-center">
             <div className="breadcrumbs text-sm">
               <ul>
-                <li><a>Home</a></li>
-                <li><a>Documents</a></li>
-                <li>Add Document</li>
+                <li>Statistics</li>
               </ul>
             </div>
           </div>
         </div>
-
-
 
         {/* Page Content */}
         <main className="p-4">
           {children}
         </main>
       </div>
+
     </div>
   );
 };
