@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { BookOpenIcon, CogIcon, ChatBubbleOvalLeftIcon, MusicalNoteIcon, ChartPieIcon } from "@heroicons/react/24/outline";
 import { Robot, ClockHistory } from "react-bootstrap-icons";
+import { CardsLayout } from "../Home/components/Cards/CardLayout";
 
 const DrawerAndLayout = ({ children }) => {
 
@@ -78,9 +79,9 @@ const DrawerAndLayout = ({ children }) => {
         </div>
       </div>
 
-      {/* Main Content */}
-      <div className="flex flex-1 flex-col md:ml-64">
-        {/* Mobile Sidebar Toggle */}
+      {/* Body Content */}
+      <div className="flex flex-1 flex-col ">
+        {/* TODO: move Mobile Sidebar Toggle to sidebar */}
         <div className="md:hidden p-4 bg-base-100">
           <button
             onClick={() => setIsSidebarOpen(!isSidebarOpen)}
@@ -91,7 +92,9 @@ const DrawerAndLayout = ({ children }) => {
         </div>
 
         {/* Page Content */}
-        <main className="p-4">{children}</main>
+        <main className="p-4">
+          {children}
+        </main>
       </div>
     </div>
   );
