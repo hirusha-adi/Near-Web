@@ -81,15 +81,24 @@ const DrawerAndLayout = ({ children }) => {
 
       {/* Body Content */}
       <div className="flex flex-1 flex-col ">
-        {/* TODO: move Mobile Sidebar Toggle to sidebar */}
-        <div className="md:hidden p-4 bg-base-100">
-          <button
-            onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-            className="btn btn-primary"
-          >
-            {isSidebarOpen ? "Hide Sidebar" : "Show Sidebar"}
-          </button>
+        <div className="flex flex-row justify-between items-center flex-nowrap gap-4 bg-beige-100 p-4 md:p-6">
+          {/* left column */}
+          <div className="">
+            <div className="text-gray-800 btn " onClick={() => setIsSidebarOpen(!isSidebarOpen)}>Show Sidebar</div>
+          </div>
+          {/* right column */}
+          <div className="flex items-center">
+            <div className="breadcrumbs text-sm">
+              <ul>
+                <li><a>Home</a></li>
+                <li><a>Documents</a></li>
+                <li>Add Document</li>
+              </ul>
+            </div>
+          </div>
         </div>
+
+
 
         {/* Page Content */}
         <main className="p-4">
