@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react";
+import { BookOpenIcon, CogIcon, ChatBubbleOvalLeftIcon, MusicalNoteIcon, ChartPieIcon } from "@heroicons/react/24/outline";
+import { Robot, ClockHistory } from "react-bootstrap-icons";
 
 const DrawerAndLayout = ({ children }) => {
 
@@ -27,6 +29,7 @@ const DrawerAndLayout = ({ children }) => {
           } md:translate-x-0 md:static`}
       >
         <div className="flex flex-col h-full">
+
           {/* Mobile Collapse Button */}
           <div className="md:hidden p-4">
             <button
@@ -39,11 +42,37 @@ const DrawerAndLayout = ({ children }) => {
 
           {/* Sidebar Content */}
           <div className="p-4 flex-1 overflow-y-auto">
-            <h2 className="text-lg font-bold mb-4">Sidebar</h2>
-            <ul className="menu menu-vertical">
-              <li><a href="#">Link 1</a></li>
-              <li><a href="#">Link 2</a></li>
-              <li><a href="#">Link 3</a></li>
+            <h2 className="text-xl font-bold mb-4">Sections</h2>
+            <ul className="menu menu-md bg-base-200 rounded-box w-56">
+              <li><a><ChartPieIcon className="w-5 pt-1" />Statistics</a></li>
+              <li>
+                <details open>
+                  <summary><CogIcon className="w-5 pt-1" /> Settings</summary>
+                  <ul>
+                    <li><a><Robot className="text-xl pt-1" />Bot</a></li>
+                    <li>
+                      <details open>
+                        <summary><ChatBubbleOvalLeftIcon className="w-5 pt-1" />Embed</summary>
+                        <ul>
+                          <li><a>Configuration</a></li>
+                          <li><a>Thumbnails</a></li>
+                        </ul>
+                      </details>
+                    </li>
+                    <li><a><MusicalNoteIcon className="w-5 pt-1" />Lavalink</a></li>
+                  </ul>
+                </details>
+              </li>
+              <li>
+                <details open>
+                  <summary><BookOpenIcon className="w-5 pt-1" /> Logs</summary>
+                  <ul>
+                    <li><a><ClockHistory className="text-xl pt-1" />Commands</a></li>
+                    <li><a><Robot className="text-xl pt-1" />Near</a></li>
+                    <li><a><MusicalNoteIcon className="text-xl w-5 pt-1" />Lavalink</a></li>
+                  </ul>
+                </details>
+              </li>
             </ul>
           </div>
         </div>
