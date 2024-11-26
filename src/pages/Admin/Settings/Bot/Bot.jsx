@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { DrawerAndLayout } from "../../components/DrawerAndLayout";
 
 const Bot = () => {
   useEffect(() => {
@@ -7,7 +8,9 @@ const Bot = () => {
 
   return (
     <>
-      Bot
+      <DrawerAndLayout pageTitle={"Bot Settings"} locationBreadcrumbs={["Settings", "Bot"]}>
+        Page
+      </DrawerAndLayout>
     </>
   );
 };

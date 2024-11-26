@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { DrawerAndLayout } from "../../components/DrawerAndLayout";
 
 const Lavalink = () => {
   useEffect(() => {
@@ -7,7 +8,9 @@ const Lavalink = () => {
 
   return (
     <>
-      Lavalink
+      <DrawerAndLayout pageTitle={"Lavalink Settings"} locationBreadcrumbs={["Settings", "Lavalink"]}>
+        Page
+      </DrawerAndLayout>
     </>
   );
 };

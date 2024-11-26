@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { DrawerAndLayout } from "../../../components/DrawerAndLayout";
 
 const Configuration = () => {
 	useEffect(() => {
@@ -7,7 +8,9 @@ const Configuration = () => {
 
 	return (
 		<>
-			Configuration
+			<DrawerAndLayout pageTitle={"Embed Settings"} locationBreadcrumbs={["Settings", "Embed", "Configuration"]}>
+				Page
+			</DrawerAndLayout>
 		</>
 	);
 };

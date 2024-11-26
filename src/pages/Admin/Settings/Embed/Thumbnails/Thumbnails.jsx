@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { DrawerAndLayout } from "../../../components/DrawerAndLayout";
 
 const Thumbnails = () => {
 	useEffect(() => {
@@ -7,7 +8,9 @@ const Thumbnails = () => {
 
 	return (
 		<>
-			Thumbnails
+			<DrawerAndLayout pageTitle={"Embed Thumbnails"} locationBreadcrumbs={["Settings", "Embed", "Thumbnails"]}>
+				Page
+			</DrawerAndLayout>
 		</>
 	);
 };

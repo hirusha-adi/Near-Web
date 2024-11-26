@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { DrawerAndLayout } from "../../components/DrawerAndLayout";
 
 const Commands = () => {
 	useEffect(() => {
@@ -7,7 +8,9 @@ const Commands = () => {
 
 	return (
 		<>
-			Command Logs
+			<DrawerAndLayout pageTitle={"Command Logs (History)"} locationBreadcrumbs={["Settings", "Logs", "Commands"]}>
+				Page
+			</DrawerAndLayout>
 		</>
 	);
 };

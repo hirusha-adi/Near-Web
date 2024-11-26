@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { DrawerAndLayout } from "../../components/DrawerAndLayout";
 
 const Near = () => {
 	useEffect(() => {
@@ -7,7 +8,9 @@ const Near = () => {
 
 	return (
 		<>
-			Near Logs
+			<DrawerAndLayout pageTitle={"Near Logs"} locationBreadcrumbs={["Settings", "Logs", "Near"]}>
+				Page
+			</DrawerAndLayout>
 		</>
 	);
 };
