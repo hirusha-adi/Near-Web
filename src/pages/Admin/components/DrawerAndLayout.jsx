@@ -1,5 +1,6 @@
 import { BookOpenIcon, CogIcon, ChatBubbleOvalLeftIcon, MusicalNoteIcon, ChartPieIcon } from "@heroicons/react/24/outline";
 import { Robot, ClockHistory, LayoutSidebar } from "react-bootstrap-icons";
+import { NavLink } from "react-router-dom";
 
 const DrawerAndLayout = ({ locationBreadcrumbs, pageTitle, children }) => {
 
@@ -49,22 +50,22 @@ const DrawerAndLayout = ({ locationBreadcrumbs, pageTitle, children }) => {
           <label htmlFor="my-drawer-2" aria-label="close sidebar" className="drawer-overlay"></label>
           <ul className="menu menu-sm bg-base-200 rounded-box min-h-full w-80 p-4">
             <h2 className="menu-title text-lg text-gray-600">Admin Dashboard</h2>
-            <li><a><ChartPieIcon className="w-5 pt-1" />Statistics</a></li>
+            <li><NavLink to={"/admin/statistics"}><ChartPieIcon className="w-5 pt-1" />Statistics</NavLink></li>
             <li>
               <details open>
                 <summary><CogIcon className="w-5 pt-1" /> Settings</summary>
                 <ul>
-                  <li><a><Robot className="text-xl pt-1" />Bot</a></li>
+                  <li><NavLink to={"/admin/settings/bot"}><Robot className="text-xl pt-1" />Bot</NavLink></li>
                   <li>
                     <details open>
                       <summary><ChatBubbleOvalLeftIcon className="w-5 pt-1" />Embed</summary>
                       <ul>
-                        <li><a>Configuration</a></li>
-                        <li><a>Thumbnails</a></li>
+                        <li><NavLink to={"/admin/settings/embed/configuration"}>Configuration</NavLink></li>
+                        <li><NavLink to={"/admin/settings/embed/thumbnails"}>Thumbnails</NavLink></li>
                       </ul>
                     </details>
                   </li>
-                  <li><a><MusicalNoteIcon className="w-5 pt-1" />Lavalink</a></li>
+                  <li><NavLink to={"/admin/settings/lavalink"}><MusicalNoteIcon className="w-5 pt-1" />Lavalink</NavLink></li>
                 </ul>
               </details>
             </li>
@@ -72,9 +73,9 @@ const DrawerAndLayout = ({ locationBreadcrumbs, pageTitle, children }) => {
               <details open>
                 <summary><BookOpenIcon className="w-5 pt-1" /> Logs</summary>
                 <ul>
-                  <li><a><ClockHistory className="text-xl pt-1" />Commands</a></li>
-                  <li><a><Robot className="text-xl pt-1" />Near</a></li>
-                  <li><a><MusicalNoteIcon className="text-xl w-5 pt-1" />Lavalink</a></li>
+                  <li><NavLink to={"/admin/logs/commands"}><ClockHistory className="text-xl pt-1" />Commands</NavLink></li>
+                  <li><NavLink to={"/admin/logs/near"}><Robot className="text-xl pt-1" />Near</NavLink></li>
+                  <li><NavLink to={"/admin/logs/lavalink"}><MusicalNoteIcon className="text-xl w-5 pt-1" />Lavalink</NavLink></li>
                 </ul>
               </details>
             </li>
