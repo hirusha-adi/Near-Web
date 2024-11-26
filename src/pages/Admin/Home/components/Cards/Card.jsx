@@ -1,9 +1,9 @@
 const Card = ({ icon, number, description }) => {
     return (
         <>
-            <div className="flex items-center p-4 bg-base-100 shadow-md rounded-lg">
+            <div className="flex items-center p-4 bg-base-100 shadow-xl rounded-2xl">
                 {/* Icon */}
-                <div className="text-primary text-4xl mr-4 w-10">
+                <div className="text-red-600 text-4xl mr-4 w-10">
                     {icon}
                 </div>
 
