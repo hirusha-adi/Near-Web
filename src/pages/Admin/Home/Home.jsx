@@ -6,12 +6,11 @@ import { BookOpenIcon, CogIcon, ChatBubbleOvalLeftIcon, MusicalNoteIcon, ChartPi
 
 const Home = () => {
   return (
-    <DrawerAndLayout>
+    <DrawerAndLayout locationBreadcrumbs={["Statistics"]}>
       <CardsLayout >
         <Card icon={<BookOpenIcon />} number="0" description="Users" />
         <Card icon={<CogIcon />} number="0" description="Questions" />
         <Card icon={<CogIcon />} number="0" description="Questions" />
-
       </CardsLayout>
     </DrawerAndLayout>
   );
