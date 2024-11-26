@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
 import { EnvelopeIcon } from "@heroicons/react/24/outline";
 import { KeyIcon } from "@heroicons/react/24/outline";
+import Swal from "sweetalert2";
+
 import { login } from "../../lib/backend";
 
 const Login = () => {
   useEffect(() => {
-    document.title = `Admin Login`;
+    document.title = `Admin Login | Near`;
   });
 
   const [user, setUser] = useState("");
@@ -22,6 +24,18 @@ const Login = () => {
     if (!user || !password) {
       setErrorMessage("Username and password are required.");
       setIsLoading(false);
+      Swal.fire({
+        icon: "warning",
+        title: "Missing Information",
+        text: errorMessage,
+        showCancelButton: true,
+        showConfirmButton: false,
+        cancelButtonText: "Close",
+        customClass: {
+          popup: "custom-swal-popup",
+          cancelButton: "custom-swal-cancel-button",
+        },
+      });
       return;
     }
 
@@ -34,13 +48,29 @@ const Login = () => {
       setErrorMessage(""); // Clear error message on success
     }
     catch (error) {
+      let errorMessage;
       if (error.status === 400) {
-        setErrorMessage("Invalid credentials. Please check your username and password.");
+        errorMessage = "Invalid credentials. Please check your username and password.";
       } else if (error.status === 404) {
-        setErrorMessage("User not found. Please check your details.");
+        errorMessage = "User not found. Please check your details.";
       } else {
-        setErrorMessage("An unexpected error occurred. Please try again later.");
+        errorMessage = "An unexpected error occurred. Please try again later.";
       }
+      setErrorMessage(errorMessage); // Update state with the error message
+
+      // Show SweetAlert2 popup for the error
+      Swal.fire({
+        icon: "error",
+        title: "Login Failed",
+        text: errorMessage,
+        showCancelButton: true,
+        showConfirmButton: false,
+        cancelButtonText: "Close",
+        customClass: {
+          popup: "custom-swal-popup",
+          cancelButton: "custom-swal-cancel-button",
+        },
+      });
     }
     finally {
       setIsLoading(false);
@@ -92,7 +122,9 @@ const Login = () => {
                   type="submit"
                   disabled={isLoading}
                 >
-                  {isLoading ? "Logging in..." : "Login"}
+                  {isLoading ?
+                    (<span className="loading loading-dots loading-lg"></span>)
+                    : "Login"}
                 </button>
               </div>
               {/* Contact */}
