@@ -4,17 +4,17 @@ const DrawerAndLayout = ({ children }) => {
 
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
+  // disable scrolling on mobile when the sidebar is open
+  // used only for small screens
+  // -----
   useEffect(() => {
     if (isSidebarOpen) {
-      // Disable scrolling on mobile when the sidebar is open
       document.body.style.overflow = "hidden";
     } else {
-      // Re-enable scrolling
-      document.body.style.overflow = "";
+      document.body.style.overflow = ""; // re-enable scrolling
     }
-
-    // Cleanup on unmount
     return () => {
+      // cleanup on unmount
       document.body.style.overflow = "";
     };
   }, [isSidebarOpen]);
