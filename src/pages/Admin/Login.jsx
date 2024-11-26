@@ -10,11 +10,41 @@ const Login = () => {
 
   const [user, setUser] = useState("");
   const [password, setPassword] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   async function handleLogin(e) {
     e.preventDefault();
+    setErrorMessage(""); // reset for new attempt
+    setIsLoading(true);
+
     console.log(user, password);
-    login(user, password);
+    if (!user || !password) {
+      setErrorMessage("Username and password are required.");
+      setIsLoading(false);
+      return;
+    }
+
+    try {
+      /* 
+        error catching doesn't work without `await`
+        no idea why 
+      */
+      await login(user, password);
+      setErrorMessage(""); // Clear error message on success
+    }
+    catch (error) {
+      if (error.status === 400) {
+        setErrorMessage("Invalid credentials. Please check your username and password.");
+      } else if (error.status === 404) {
+        setErrorMessage("User not found. Please check your details.");
+      } else {
+        setErrorMessage("An unexpected error occurred. Please try again later.");
+      }
+    }
+    finally {
+      setIsLoading(false);
+    }
   }
 
   return (
@@ -40,6 +70,7 @@ const Login = () => {
                   onChange={(e) => {
                     setUser(e.target.value);
                   }}
+                  disabled={isLoading}
                 />
               </label>
               <label className="input input-bordered flex items-center gap-2">
@@ -51,6 +82,7 @@ const Login = () => {
                   onChange={(e) => {
                     setPassword(e.target.value);
                   }}
+                  disabled={isLoading}
                 />
               </label>
               {/* Login Button */}
@@ -58,8 +90,9 @@ const Login = () => {
                 <button
                   className="btn btn-error w-full text-white"
                   type="submit"
+                  disabled={isLoading}
                 >
-                  Login
+                  {isLoading ? "Logging in..." : "Login"}
                 </button>
               </div>
               {/* Contact */}

@@ -8,8 +8,13 @@ export const isUserLoggedIn = pb.authStore.isValid;
 export const user = pb.authStore;
 
 export async function login(username, password) {
-  await pb.collection("users").authWithPassword(username, password);
-  window.location.reload();
+  try {
+    await pb.collection("users").authWithPassword(username, password);
+    window.location.reload();
+  } catch (error) {
+    throw error;
+  }
+
 }
 
 export async function logout() {
