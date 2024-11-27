@@ -18,35 +18,24 @@ const Help = () => {
       <div className="flex flex-col md:flex-row">
         {/* Left (Desktop) / Top (Mobile) */}
         <div className="p-4 w-full md:w-auto">
-          <ul className="menu bg-base-200 rounded-box w-full md:w-64">
-            <div className="menu-title text-lg text-gray-800">Commands List</div>
-            <li>
-              <details open>
-                <summary>Parent</summary>
-                <ul>
-                  <li><a>Submenu 1</a></li>
-                  <li><a>Submenu 2</a></li>
-                </ul>
-              </details>
-            </li>
-            <li><a>Item 3</a></li>
-            <li><a>Item 3</a></li>
-            <li><a>Item 3</a></li>
-            <li><a>Item 3</a></li>
-            <li><a>Item 3</a></li>
-            <li><a>Item 3</a></li>
-            <li><a>Item 3</a></li>
-            <li><a>Item 3</a></li>
-            <li><a>Item 3</a></li>
-            <li><a>Item 3</a></li>
-            <li><a>Item 3</a></li>
-            <li><a>Item 3</a></li>
-            <li><a>Item 3</a></li>
-            <li><a>Item 3</a></li>
-            <li><a>Item 3</a></li>
-            <li><a>Item 3</a></li>
-            <li><a>Item 3</a></li>
-          </ul>
+          <div className="bg-base-200 rounded-box w-full md:w-64 h-64 overflow-y-auto overflow-x-hidden">
+            <ul className="menu">
+              <div className="menu-title text-lg text-gray-800">Commands List</div>
+              <li>
+                <details open>
+                  <summary>Parent</summary>
+                  <ul>
+                    <li><a>Submenu 1</a></li>
+                    <li><a>Submenu 2</a></li>
+                  </ul>
+                </details>
+              </li>
+              <li><a>Item 3</a></li>
+              <li><a>Item 3</a></li>
+              <li><a>Item 3</a></li>
+              <li><a>Item 3</a></li>
+            </ul>
+          </div>
         </div>
 
         {/* Right (Desktop) / Bottom (Mobile) */}
@@ -54,6 +43,7 @@ const Help = () => {
           right in desktop and bottom on mobile
         </div>
       </div>
+
 
 
     </div>
