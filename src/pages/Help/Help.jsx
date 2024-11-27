@@ -17,7 +17,7 @@ const Help = () => {
 
       <div className="flex flex-col md:flex-row">
         {/* Left (Desktop) / Top (Mobile) */}
-        <div className="p-4 w-full md:w-auto">
+        <div className="p-2 m-2 w-full md:w-auto">
           <div className="bg-base-200 rounded-box w-full md:w-64 max-h-96 min-h-96 overflow-y-auto overflow-x-hidden" style={{ minHeight: '28rem', maxHeight: '28rem' }}>
             <ul className="menu">
               <div className="menu-title text-lg text-gray-800">Commands List</div>
