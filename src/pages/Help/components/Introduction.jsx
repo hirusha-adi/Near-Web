@@ -17,6 +17,10 @@ const Introduction = () => {
             Whether you're a new user or an experienced one, this guide will help you
             get the most out of the bot's features. Browse through the sections below
             to learn more about each command and how to use them effectively.
+            <br />
+            <br />
+            Scroll down further to find the FAQ section, where we answer common questions
+            and provide additional insights to help you make the most of Near's capabilities.
           </div>
         </div>
         <div className="md:col-span-2 order-1 md:order-2 flex justify-center items-center">

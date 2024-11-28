@@ -5,8 +5,11 @@ const Faq = () => {
     <>
       <div className="mt-20">
         <h1 className="text-3xl font-extrabold text-center md:text-left">Frequently Asked Questions</h1>
-        <div className="mt-10">
-
+        <div className="mt-8">
+          Here, you'll find answers to common questions about Near.
+          Click on any question to expand and see its detailed contents.
+        </div>
+        <div className="mt-6">
           <Collapsible title={"Does the /passwordchk command store passwords?"}>
             No, the <span className="code">/passwordcheck</span> command does not store any passwords.
             The bot is fully open source, and you can audit the code yourself by {" "}
