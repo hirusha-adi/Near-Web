@@ -2,9 +2,10 @@ import { useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import Markdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
+import { Journal, Journals, ListColumnsReverse, ListCheck, Book } from "react-bootstrap-icons";
 
-import legalJson from "../../data/legal.json";
-import { useFetchRaw } from "../../hooks";
+import legalJson from "../data/legal.json";
+import { useFetchRaw } from "../hooks";
 
 const Legal = ({ legalType }) => {
   const legalData = legalJson[legalType];
@@ -51,27 +52,27 @@ const Legal = ({ legalType }) => {
               <ul className="menu bg-base-200 menu-horizontal rounded-box">
                 <li>
                   <NavLink to={"/license"}>
-                    License
+                    <Journal />
                   </NavLink>
                 </li>
                 <li>
                   <NavLink to={"/terms-of-service"}>
-                    TOS
+                    <Book />
                   </NavLink>
                 </li>
                 <li>
                   <NavLink to={"/privacy-policy"}>
-                    TOS
+                    <ListCheck />
                   </NavLink>
                 </li>
                 <li>
                   <NavLink to={"/credits"}>
-                    TOS
+                    <ListColumnsReverse />
                   </NavLink>
                 </li>
                 <li>
                   <NavLink to={"/open-source-licenses"}>
-                    TOS
+                    <Journals />
                   </NavLink>
                 </li>
               </ul>
