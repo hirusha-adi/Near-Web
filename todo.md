@@ -1,5 +1,4 @@
-- error handling to login form
 - sherlock holmes style cyborg panda with magnifying glass... for OSINT image
 - panda with gears / settings image for login page
-- pocketbase integration
-- with pocketbase susbcribe, build osint app
+- panda images update all
+- update FAQ list
