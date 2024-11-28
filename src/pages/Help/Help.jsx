@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { Introduction } from "./components/Introduction";
 import { CommandsHelp } from "./components/CommandsHelp";
-import { Faq } from "./components/Faq";
+import { Faq } from "./components/Faq/Faq";
 
 const Help = () => {
   useEffect(() => {
