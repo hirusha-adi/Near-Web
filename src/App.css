@@ -1,4 +1,9 @@
-/* Custom Styles Here */
+/* Custom Code Block */
+.code {
+  @apply bg-gray-300 px-1 py-0.5 rounded;
+}
+
+/* for Sweet Alert 2 */
 .custom-swal-popup {
   @apply rounded-2xl !important;
 }
