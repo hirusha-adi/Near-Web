@@ -120,7 +120,7 @@ const CommandsHelp = () => {
 
         {/* Right (Desktop) / Bottom (Mobile) */}
         <div className="bg-base-100 p-4 rounded-box flex-1 px-5">
-          right in desktop and bottom on mobile
+          Help Context, coverted from MD to HTML
         </div>
       </div>
     </>
