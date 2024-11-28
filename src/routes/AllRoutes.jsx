@@ -8,6 +8,7 @@ import {
   Home,
   Leaderboards,
   Help,
+  Legal,
 
   // --------
   // Admin
@@ -37,9 +38,17 @@ const AllRoutes = () => {
       <Routes>
         {/* Main (for General Public) */}
         {/* ------------------------- */}
+        {/* General */}
         <Route path="/" element={<Home />} />
         <Route path="/leaderboards" element={<Leaderboards />} />
         <Route path="/help" element={<Help />} />
+
+        {/* Legal */}
+        <Route path="/license" element={<Legal legalType="license" />} />
+        <Route path="/terms-of-service" element={<Legal legalType="terms-of-service" />} />
+        <Route path="/privacy-policy" element={<Legal legalType="privacy-policy" />} />
+        <Route path="/credits" element={<Legal legalType="credits" />} />
+        <Route path="/open-source-licenses" element={<Legal legalType="open-source-licenses" />} />
         {/* ------------------------- */}
 
 

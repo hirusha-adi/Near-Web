@@ -2,6 +2,7 @@
 export { Home } from "./Home/Home";
 export { Leaderboards } from "./Leaderboards/Leaderboards";
 export { Help } from "./Help/Help";
+export { Legal } from "./Legal/Legal"
 
 // admin
 // ----------------------------------------------------
