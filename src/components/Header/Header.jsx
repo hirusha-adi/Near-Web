@@ -2,7 +2,6 @@ import { motion } from "framer-motion";
 import { Link, NavLink } from "react-router-dom";
 import { ChartBarIcon } from "@heroicons/react/24/outline";
 import { QuestionMarkCircleIcon } from "@heroicons/react/24/outline";
-import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
 
 import "./Header.css";
 import ImagePandaFace from "../../assets/face.png";
@@ -63,25 +62,34 @@ const Header = () => {
                 <span className="divider m-0 my-0 pointer-events-none"></span>
               </li>
               <li>
-                <a>
-                  Changelog <ArrowTopRightOnSquareIcon className="w-4" />
-                </a>
+                <NavLink to={"/changelog"}>
+                  Changelog
+                </NavLink>
               </li>
               <li>
-                <a>
-                  Source Code <ArrowTopRightOnSquareIcon className="w-4" />
-                </a>
+                <NavLink to={"/license"}>
+                  License
+                </NavLink>
               </li>
               <li>
-                <a>
-                  Privacy Policy <ArrowTopRightOnSquareIcon className="w-4" />
-                </a>
+                <NavLink to={"/terms-of-service"}>
+                  Terms of Service
+                </NavLink>
               </li>
               <li>
-                <a>
-                  Terms and Agreement{" "}
-                  <ArrowTopRightOnSquareIcon className="w-4" />
-                </a>
+                <NavLink to={"/privacy-policy"}>
+                  Privacy Policy
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to={"/credits"}>
+                  Credits
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to={"/open-source-licenses"}>
+                  Open Source Licenses
+                </NavLink>
               </li>
             </ul>
           </div>
