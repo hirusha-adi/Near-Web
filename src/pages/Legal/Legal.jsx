@@ -38,7 +38,7 @@ const Legal = ({ legalType }) => {
                       </>
                     ) : (
                       <>
-                        <pre className="bg-base-100 text-gray-900">{rawContent}</pre>
+                        <pre className="bg-base-100 text-gray-900 max-w-full min-w-full w-full">{rawContent}</pre>
                       </>
                     )}
                   </>
