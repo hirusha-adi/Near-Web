@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import Markdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
-import { Journal, Journals, ListColumnsReverse, ListCheck, Book } from "react-bootstrap-icons";
+import { Journal, Journals, ListColumnsReverse, ListCheck, Book, ArrowClockwise } from "react-bootstrap-icons";
 
 import legalJson from "../data/legal.json";
 import { useFetchRaw } from "../hooks";
@@ -49,6 +49,11 @@ const Legal = ({ legalType }) => {
           <div className="flex justify-center items-center">
             <div className="min-h-full max-h-full h-full">
               <ul className="menu bg-base-200 menu-horizontal rounded-box text-lg">
+                <li>
+                  <NavLink to={"/changelog"}>
+                    <ArrowClockwise />
+                  </NavLink>
+                </li>
                 <li>
                   <NavLink to={"/license"}>
                     <Journal />

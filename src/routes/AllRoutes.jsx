@@ -44,6 +44,7 @@ const AllRoutes = () => {
         <Route path="/help" element={<Help />} />
 
         {/* Legal */}
+        <Route path="/changelog" element={<Legal legalType="changelog" />} />
         <Route path="/license" element={<Legal legalType="license" />} />
         <Route path="/terms-of-service" element={<Legal legalType="terms-of-service" />} />
         <Route path="/privacy-policy" element={<Legal legalType="privacy-policy" />} />

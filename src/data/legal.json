@@ -23,5 +23,10 @@
     "title": "Open Source Licenses",
     "raw_url": "https://raw.githubusercontent.com/hirusha-adi/Near/refs/heads/main/LICENSE",
     "markdown": false
+  },
+  "changelog": {
+    "title": "Changelog",
+    "raw_url": "https://raw.githubusercontent.com/hirusha-adi/Near/refs/heads/main/changelog.md",
+    "markdown": true
   }
 }
