@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import Markdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 
@@ -10,7 +10,7 @@ const Legal = ({ legalType }) => {
   const legalData = legalJson[legalType];
 
   useEffect(() => {
-    document.title = `${legalData.title}`;
+    document.title = `${legalData.title} | Near`;
   });
 
   const { rawContent, isLoading, error } = useFetchRaw(legalData.raw_url);
@@ -50,19 +50,29 @@ const Legal = ({ legalType }) => {
             <div className="min-h-full max-h-full h-full">
               <ul className="menu bg-base-200 menu-horizontal rounded-box">
                 <li>
-                  <a>
-                    Inbox
-                  </a>
+                  <NavLink to={"/license"}>
+                    License
+                  </NavLink>
                 </li>
                 <li>
-                  <a>
-                    Updates
-                  </a>
+                  <NavLink to={"/terms-of-service"}>
+                    TOS
+                  </NavLink>
                 </li>
                 <li>
-                  <a>
-                    Stats
-                  </a>
+                  <NavLink to={"/privacy-policy"}>
+                    TOS
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to={"/credits"}>
+                    TOS
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to={"/open-source-licenses"}>
+                    TOS
+                  </NavLink>
                 </li>
               </ul>
             </div>
