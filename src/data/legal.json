@@ -1,4 +1,9 @@
 {
+  "license": {
+    "title": "License",
+    "raw_url": "https://raw.githubusercontent.com/hirusha-adi/Near/refs/heads/main/LICENSE",
+    "markdown": false
+  },
   "terms-of-service": {
     "title": "Terms Of Service",
     "raw_url": "https://raw.githubusercontent.com/hirusha-adi/Near/refs/heads/main/changelog.md",
