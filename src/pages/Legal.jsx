@@ -20,17 +20,16 @@ const Legal = ({ legalType }) => {
 
   return (
     <>
-      <div className="pt-5 min-h-screen">
+      <div className="pt-10 md:pt-5 min-h-screen">
         <h1 className="text-3xl font-extrabold text-center">{legalData.title}</h1>
-
-        <div className="grid grid-cols-1 bg-base-200 rounded-b-3xl rounded-t-3xl mx-16 mt-5">
-          <div className="rounded-b-2xl rounded-t-3xl h-96 bg-base-100 pt-8 overflow-x-scroll">
+        <div className="grid grid-cols-1 bg-base-200 rounded-b-3xl rounded-t-3xl mx-4 md:mx-16 mt-5">
+          <div className="rounded-b-2xl rounded-t-3xl h-[70vh] bg-base-100 pt-8 overflow-x-scroll">
             {isLoading ? (
               <div className="flex justify-center items-center h-72">
                 <span className="loading loading-spinner text-error"></span>
               </div>
             ) : (
-              <div className="prose max-w-full min-w-full w-full px-10">
+              <div className="prose max-w-full min-w-full w-full px-4 md:px-10">
                 {error ? (`An error occured. Please try refreshing the page! ${error}`) : (
                   <>
                     {legalData.markdown ? (
@@ -49,7 +48,7 @@ const Legal = ({ legalType }) => {
           </div>
           <div className="flex justify-center items-center">
             <div className="min-h-full max-h-full h-full">
-              <ul className="menu bg-base-200 menu-horizontal rounded-box">
+              <ul className="menu bg-base-200 menu-horizontal rounded-box text-lg">
                 <li>
                   <NavLink to={"/license"}>
                     <Journal />
