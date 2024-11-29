@@ -1,6 +1,6 @@
 import "./App.css";
 import { AllRoutes } from "./routes/AllRoutes";
-import { Header, Footer } from "./components";
+import { Header, Footer, BackToTop } from "./components";
 
 function App() {
   return (
@@ -9,6 +9,7 @@ function App() {
       <main className="bg-gray-50">
         <AllRoutes />
       </main>
+      <BackToTop />
       <Footer />
     </>
   );
