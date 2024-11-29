@@ -8,16 +8,21 @@ const Commands = () => {
 		document.title = `Commands History | Near`;
 	});
 
-	const { currentPage, nextPage, previousPage, resetPage, setPage } = usePagination(1);
+	const { currentPage, nextPage, previousPage, resetPage, setPage, maxPage, setMaxPage } = usePagination(1);
 	const { data: commands, loading, error } = useFetchPocketbase(getCommandsHistory, currentPage);
 
-	
+	useEffect(() => {
+    if (commands?.totalPages) {
+      setMaxPage(commands.totalPages);
+    }
+  }, [commands, setMaxPage]);
+
 	console.log(commands?.items)
 
 	return (
 		<>
 			<DrawerAndLayout pageTitle={"Command Logs (History)"} locationBreadcrumbs={["Settings", "Logs", "Commands"]}>
-				<div onClick={() => nextPage(1)}>
+				<div onClick={() => nextPage()}>
 					Click here
 				</div>
 			</DrawerAndLayout>
