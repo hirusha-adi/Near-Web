@@ -8,13 +8,8 @@ export const isUserLoggedIn = pb.authStore.isValid;
 export const user = pb.authStore;
 
 export async function login(username, password) {
-  try {
     await pb.collection("users").authWithPassword(username, password);
     window.location.reload();
-  } catch (error) {
-    throw error;
-  }
-
 }
 
 export async function logout() {
@@ -23,4 +18,15 @@ export async function logout() {
   // WARNING: this will break if there is a base url
   window.location.href = "/admin/login";
   // window.location.reload();
+}
+
+export async function getCommandsHistory(pageNo=0) {
+  let x;
+  if (pageNo === 0) {
+    x = await pb.collection("commands_history").getFullList();
+  } else{
+    x = await pb.collection("commands_history").getList(pageNo, 10);
+  }
+  console.log(x)
+  return x
 }
