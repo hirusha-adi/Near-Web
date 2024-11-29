@@ -21,12 +21,5 @@ export async function logout() {
 }
 
 export async function getCommandsHistory(pageNo=0) {
-  let x;
-  if (pageNo === 0) {
-    x = await pb.collection("commands_history").getFullList();
-  } else{
-    x = await pb.collection("commands_history").getList(pageNo, 10);
-  }
-  console.log(x)
-  return x
+  return await pb.collection("commands_history").getList(pageNo, 10);
 }
