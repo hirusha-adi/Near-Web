@@ -1,19 +1,31 @@
+import { useState, useEffect } from "react";
+import Markdown from 'react-markdown'
+import remarkGfm from 'remark-gfm'
+
+import { useFetchRaw } from "../../../hooks/useFetchRaw";
 
 const CommandsHelp = () => {
+
+  const [selectedCommand, setSelectedCommand] = useState("move");
+
+  const url = `https://raw.githubusercontent.com/hirusha-adi/Near-Data/refs/heads/main/help/${selectedCommand}.md`;
+  const { rawContent, isLoading, error } = useFetchRaw(url);
+
+
   return (
     <>
       {/* commands help (main section) */}
       <div className="flex flex-col md:flex-row mt-12">
         {/* Left (Desktop) / Top (Mobile) */}
-        <div className="px-2 m-2 w-full md:w-auto">
-          <div className="bg-base-200 rounded-box w-full md:w-64 max-h-96 min-h-96 overflow-y-auto overflow-x-hidden" style={{ minHeight: '28rem', maxHeight: '28rem' }}>
+        <div className="px-2 mx-2 mb-2 w-full md:w-auto">
+          <div className="bg-base-200 rounded-box w-full md:w-64 overflow-y-auto overflow-x-hidden h-[82vh] max-h-[82vh] min-h-[82vh]" >
             <ul className="menu">
               <div className="menu-title text-lg text-gray-800">Commands List</div>
               <li>
                 <details>
                   <summary>Administration</summary>
                   <ul>
-                    <li><a>/move</a></li>
+                    <li><a onClick={() => setSelectedCommand("move")}>/move</a></li>
                   </ul>
                 </details>
               </li>
@@ -21,12 +33,12 @@ const CommandsHelp = () => {
                 <details>
                   <summary>Crypto</summary>
                   <ul>
-                    <li><a>/btc</a></li>
-                    <li><a>/eth</a></li>
-                    <li><a>/xmr</a></li>
-                    <li><a>/doge</a></li>
-                    <li><a>/xrp</a></li>
-                    <li><a>/rvn</a></li>
+                    <li><a onClick={() => setSelectedCommand("btc")}>/btc</a></li>
+                    <li><a onClick={() => setSelectedCommand("eth")}>/eth</a></li>
+                    <li><a onClick={() => setSelectedCommand("xmr")}>/xmr</a></li>
+                    <li><a onClick={() => setSelectedCommand("doge")}>/doge</a></li>
+                    <li><a onClick={() => setSelectedCommand("xrp")}>/xrp</a></li>
+                    <li><a onClick={() => setSelectedCommand("rvn")}>/rvn</a></li>
                   </ul>
                 </details>
               </li>
@@ -34,13 +46,13 @@ const CommandsHelp = () => {
                 <details>
                   <summary>Encoding</summary>
                   <ul>
-                    <li><a>/b64encode</a></li>
-                    <li><a>/b64decode</a></li>
-                    <li><a>/md5</a></li>
-                    <li><a>/sha1</a></li>
-                    <li><a>/sha224</a></li>
-                    <li><a>/sha512</a></li>
-                    <li><a>/leet</a></li>
+                    <li><a onClick={() => setSelectedCommand("b64encode")}>/b64encode</a></li>
+                    <li><a onClick={() => setSelectedCommand("b64decode")}>/b64decode</a></li>
+                    <li><a onClick={() => setSelectedCommand("md5")}>/md5</a></li>
+                    <li><a onClick={() => setSelectedCommand("sha1")}>/sha1</a></li>
+                    <li><a onClick={() => setSelectedCommand("sha224")}>/sha224</a></li>
+                    <li><a onClick={() => setSelectedCommand("sha512")}>/sha512</a></li>
+                    <li><a onClick={() => setSelectedCommand("leet")}>/leet</a></li>
                   </ul>
                 </details>
               </li>
@@ -48,8 +60,8 @@ const CommandsHelp = () => {
                 <details>
                   <summary>Fake Information</summary>
                   <ul>
-                    <li><a>/fake</a></li>
-                    <li><a>/fakeprofiles</a></li>
+                    <li><a onClick={() => setSelectedCommand("fake")}>/fake</a></li>
+                    <li><a onClick={() => setSelectedCommand("fakeprofiles")}>/fakeprofiles</a></li>
                   </ul>
                 </details>
               </li>
@@ -57,12 +69,12 @@ const CommandsHelp = () => {
                 <details>
                   <summary>Fun</summary>
                   <ul>
-                    <li><a>/inspire</a></li>
-                    <li><a>/meme</a></li>
-                    <li><a>/dadjoke</a></li>
-                    <li><a>/joke</a></li>
-                    <li><a>/wyr</a></li>
-                    <li><a>/advice</a></li>
+                    <li><a onClick={() => setSelectedCommand("inspire")}>/inspire</a></li>
+                    <li><a onClick={() => setSelectedCommand("meme")}>/meme</a></li>
+                    <li><a onClick={() => setSelectedCommand("dadjoke")}>/dadjoke</a></li>
+                    <li><a onClick={() => setSelectedCommand("joke")}>/joke</a></li>
+                    <li><a onClick={() => setSelectedCommand("wyr")}>/wyr</a></li>
+                    <li><a onClick={() => setSelectedCommand("advice")}>/advice</a></li>
                   </ul>
                 </details>
               </li>
@@ -70,9 +82,9 @@ const CommandsHelp = () => {
                 <details>
                   <summary>General</summary>
                   <ul>
-                    <li><a>/ping</a></li>
-                    <li><a>/uptime</a></li>
-                    <li><a>/clean</a></li>
+                    <li><a onClick={() => setSelectedCommand("ping")}>/ping</a></li>
+                    <li><a onClick={() => setSelectedCommand("uptime")}>/uptime</a></li>
+                    <li><a onClick={() => setSelectedCommand("clean")}>/clean</a></li>
                   </ul>
                 </details>
               </li>
@@ -80,10 +92,10 @@ const CommandsHelp = () => {
                 <details>
                   <summary>Information Gathering</summary>
                   <ul>
-                    <li><a>/ipinfo</a></li>
-                    <li><a>/avatar</a></li>
-                    <li><a>/serverinfo</a></li>
-                    <li><a>/userinfo</a></li>
+                    <li><a onClick={() => setSelectedCommand("ipinfo")}>/ipinfo</a></li>
+                    <li><a onClick={() => setSelectedCommand("avatar")}>/avatar</a></li>
+                    <li><a onClick={() => setSelectedCommand("serverinfo")}>/serverinfo</a></li>
+                    <li><a onClick={() => setSelectedCommand("userinfo")}>/userinfo</a></li>
                   </ul>
                 </details>
               </li>
@@ -91,15 +103,15 @@ const CommandsHelp = () => {
                 <details>
                   <summary>Music</summary>
                   <ul>
-                    <li><a>/lyrics</a></li>
-                    <li><a>--join</a></li>
-                    <li><a>--leave</a></li>
-                    <li><a>--play</a></li>
-                    <li><a>--skip</a></li>
-                    <li><a>--pause</a></li>
-                    <li><a>--resume</a></li>
-                    <li><a>--shuffle</a></li>
-                    <li><a>--volume</a></li>
+                    <li><a onClick={() => setSelectedCommand("lyrics")}>/lyrics</a></li>
+                    <li><a onClick={() => setSelectedCommand("join")}>--join</a></li>
+                    <li><a onClick={() => setSelectedCommand("leave")}>--leave</a></li>
+                    <li><a onClick={() => setSelectedCommand("play")}>--play</a></li>
+                    <li><a onClick={() => setSelectedCommand("skip")}>--skip</a></li>
+                    <li><a onClick={() => setSelectedCommand("pause")}>--pause</a></li>
+                    <li><a onClick={() => setSelectedCommand("resume")}>--resume</a></li>
+                    <li><a onClick={() => setSelectedCommand("shuffle")}>--shuffle</a></li>
+                    <li><a onClick={() => setSelectedCommand("volume")}>--volume</a></li>
                   </ul>
                 </details>
               </li>
@@ -107,10 +119,10 @@ const CommandsHelp = () => {
                 <details>
                   <summary>Tools</summary>
                   <ul>
-                    <li><a>/passwordgen</a></li>
-                    <li><a>/passwordchk</a></li>
-                    <li><a>/insta</a></li>
-                    <li><a>/bin</a></li>
+                    <li><a onClick={() => setSelectedCommand("passwordgen")}>/passwordgen</a></li>
+                    <li><a onClick={() => setSelectedCommand("passwordchk")}>/passwordchk</a></li>
+                    <li><a onClick={() => setSelectedCommand("insta")}>/insta</a></li>
+                    <li><a onClick={() => setSelectedCommand("bin")}>/bin</a></li>
                   </ul>
                 </details>
               </li>
@@ -119,8 +131,20 @@ const CommandsHelp = () => {
         </div>
 
         {/* Right (Desktop) / Bottom (Mobile) */}
-        <div className="bg-base-100 p-4 rounded-box flex-1 px-5">
-          Help Context, coverted from MD to HTML
+        <div className="bg-base-100 p-4 rounded-box flex-1 px-5 h-[82vh] max-h-[82vh] min-h-[82vh]">
+          {isLoading ? (
+            <div className="flex justify-center items-center h-80">
+              <span className="loading loading-spinner text-error"></span>
+            </div>
+          ) : (
+            <>
+              {error ? (`An error occured. Please try refreshing the page! ${error}`) : (
+                <div className="prose min-w-full max-w-full w-full">
+                  <Markdown remarkPlugins={[remarkGfm]}>{rawContent}</Markdown>
+                </div>
+              )}
+            </>
+          )}
         </div>
       </div>
     </>
