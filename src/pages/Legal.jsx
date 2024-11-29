@@ -16,8 +16,6 @@ const Legal = ({ legalType }) => {
 
   const { rawContent, isLoading, error } = useFetchRaw(legalData.raw_url);
 
-  console.log(rawContent, isLoading, error)
-
   return (
     <>
       <div className="pt-10 md:pt-5 min-h-screen">
