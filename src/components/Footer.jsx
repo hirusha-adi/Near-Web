@@ -1,8 +1,10 @@
-import ImagePandaSitting from "../assets/sitting.png";
+import { Link } from "react-router-dom";
 import { ChartBarIcon } from "@heroicons/react/24/outline";
 import { QuestionMarkCircleIcon } from "@heroicons/react/24/outline";
 import { CodeBracketIcon } from "@heroicons/react/24/outline";
 import { Discord } from "react-bootstrap-icons";
+
+import ImagePandaSitting from "../assets/sitting.png";
 
 const Footer = () => {
   return (
@@ -18,16 +20,16 @@ const Footer = () => {
                 <span className="text-md">The discord bot of Team SDS</span>
               </p>
               <p className="mt-5">
-                <a className="btn mx-1 rounded-full">
+                <Link to={"/leaderboards"} className="btn mx-1 rounded-full">
                   <ChartBarIcon className="w-6 inline-block" />
-                </a>
-                <a className="btn mx-1 rounded-full">
+                </Link>
+                <Link to={"/help"} className="btn mx-1 rounded-full">
                   <QuestionMarkCircleIcon className="w-6 inline-block" />
-                </a>
-                <a className="btn mx-1 rounded-full">
+                </Link>
+                <a href="https://github.com/hirusha-adi/Near" target="blank" className="btn mx-1 rounded-full">
                   <CodeBracketIcon className="w-6 inline-block" />
                 </a>
-                <a className="btn mx-1 rounded-full">
+                <a href="https://teamsds.net/discord" target="blank" className="btn mx-1 rounded-full">
                   <Discord className="text-xl w-6 inline-block" />
                 </a>
               </p>
