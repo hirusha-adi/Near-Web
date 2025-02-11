@@ -1,5 +1,5 @@
 services:
-  react-vite-app:
+  nearbot-website:
     build:
       context: .
       dockerfile: Dockerfile
