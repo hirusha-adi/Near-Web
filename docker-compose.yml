@@ -1,0 +1,9 @@
+services:
+  react-vite-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "127.0.0.1:6001:80"
+    container_name: thriya_lank_web
+    restart: unless-stopped
